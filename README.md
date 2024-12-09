@@ -16,7 +16,7 @@ A utility library for ExpressJS applications that provides helper functions to s
 Install the package via npm:
 
 ```bash
-npm install expressjs-api-utility
+npm install @decodeblock/expressjs-api-utility
 ```
 
 ---
@@ -28,7 +28,7 @@ Using the `ApiResponder` class for handling JSON responses in an ExpressJS appli
 
 ```javascript
 const express = require('express');
-const ApiResponder = require('expressjs-api-utility');
+const ApiResponder = require('@decodeblock/expressjs-api-utility');
 
 const app = express();
 const apiResponder = new ApiResponder();
