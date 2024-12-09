@@ -2,6 +2,29 @@
 
 All notable changes to `expressjs-api-utility` will be documented in this file.
 
+## v1.0.1 - 2024-12-09
+
+### Fixed
+
+- Corrected the `main` field in the `package.json` file to point to the proper entry file (`src/index.js`), resolving issues with importing the package and ensuring compatibility with Node.js.
+
+
+---
+
+### Changed
+
+- Minor internal adjustments to ensure package structure aligns with Node.js module resolution best practices.
+
+
+---
+
+**Upgrade Note:**
+To apply this fix, update your package to the latest version using the following command:
+
+```bash
+npm install @decodeblock/expressjs-api-utility@latest
+
+```
 ## v1.0.0 - 2024-12-09
 
 ### Added
