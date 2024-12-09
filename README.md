@@ -1,23 +1,22 @@
-# API Utility
+# ExpressJS API Utility
 
-[![License](https://img.shields.io/github/license/decodeblock/api-utility.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/decodeblock/api-utility.svg?style=flat-square)](https://packagist.org/packages/decodeblock/api-utility)
-[![Tests Status](https://img.shields.io/github/actions/workflow/status/decodeblock/api-utility/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/decodeblock/api-utility/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![Code Style Status](https://img.shields.io/github/actions/workflow/status/decodeblock/api-utility/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/decodeblock/api-utility/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/decodeblock/api-utility.svg?style=flat-square)](https://packagist.org/packages/decodeblock/api-utility)
-[![Contributors](https://img.shields.io/github/contributors/decodeblock/api-utility.svg?style=flat-square)](https://github.com/decodeblock/api-utility/graphs/contributors)
-[![PHP Version Support](https://img.shields.io/packagist/php-v/decodeblock/api-utility.svg?style=flat-square)](https://www.php.net/)
+[![License](https://img.shields.io/github/license/gabbyti/expressjs-api-utility.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Latest Version](https://img.shields.io/npm/v/expressjs-api-utility.svg?style=flat-square)](https://www.npmjs.com/package/expressjs-api-utility)
+[![Tests Status](https://img.shields.io/github/actions/workflow/status/gabbyti/expressjs-api-utility/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/gabbyti/expressjs-api-utility/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![Total Downloads](https://img.shields.io/npm/dt/expressjs-api-utility.svg?style=flat-square)](https://www.npmjs.com/package/expressjs-api-utility)
+[![Contributors](https://img.shields.io/github/contributors/gabbyti/expressjs-api-utility.svg?style=flat-square)](https://github.com/gabbyti/expressjs-api-utility/graphs/contributors)
+[![Node.js Version Support](https://img.shields.io/node/v/expressjs-api-utility.svg?style=flat-square)](https://nodejs.org/)
 
-A Laravel package providing helper functions for streamlined API development. Simplify response handling and enhance the structure of your APIs.
+A utility library for ExpressJS applications that provides helper functions to streamline API response handling. Simplify JSON response formatting and enhance your API development process.
 
 ---
 
 ## Installation
 
-Install the package via Composer:
+Install the package via npm:
 
 ```bash
-composer require decodeblock/api-utility
+npm install expressjs-api-utility
 ```
 
 ---
@@ -25,26 +24,32 @@ composer require decodeblock/api-utility
 ## Usage
 
 ### Example
-Using the `ApiResponder` trait for handling JSON responses:
+Using the `ApiResponder` class for handling JSON responses in an ExpressJS application:
 
-```php
-use Illuminate\Http\Response;
-use Decodeblock\ApiUtility\Traits\ApiResponder;
+```javascript
+const express = require('express');
+const ApiResponder = require('expressjs-api-utility');
 
-class YourController extends Controller
-{
-    use ApiResponder;
+const app = express();
+const apiResponder = new ApiResponder();
 
-    public function index()
-    {
-        return $this->successResponse("Hello, API Utility", Response::HTTP_OK, null);
-    }
-}
+app.get('/success', (req, res) => {
+    apiResponder.successResponse(res, 'Request was successful', 200, { data: 'Your data here' });
+});
+
+app.get('/failure', (req, res) => {
+    apiResponder.failureResponse(res, 'Request failed', 400, { error: 'Bad Request' });
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
 ```
 
-The `ApiResponder` trait provides methods like:
-- `success($message, $code, $data, $metadata = null)`: For successful responses.
-- `error($message, $code, $data, $metadata = null)`: For error responses.
+The `ApiResponder` class provides the following methods:
+- `successResponse(res, message, code, data, metadata = null)`: For successful responses.
+- `failureResponse(res, message, code, data, metadata = null)`: For error responses.
+- `meEndpointResponse(res, user)`: For `/me` endpoint responses that return login status and user details.
 
 ---
 
@@ -53,8 +58,10 @@ The `ApiResponder` trait provides methods like:
 Run tests using:
 
 ```bash
-composer test
+npm test
 ```
+
+Ensure that you have your test framework (e.g., Jest) set up to test the API utility functions.
 
 ---
 
