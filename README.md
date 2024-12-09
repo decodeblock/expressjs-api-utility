@@ -24,21 +24,20 @@ npm install @decodeblock/expressjs-api-utility
 ## Usage
 
 ### Example
-Using the `ApiResponder` class for handling JSON responses in an ExpressJS application:
+Using the `ResponseStatus` and `ApiResponder` class for handling JSON responses in an ExpressJS application:
 
 ```javascript
 const express = require('express');
-const ApiResponder = require('@decodeblock/expressjs-api-utility');
+const { ApiResponder, ResponseStatus } = require('@decodeblock/expressjs-api-utility');
 
 const app = express();
-const apiResponder = new ApiResponder();
 
 app.get('/success', (req, res) => {
-    apiResponder.successResponse(res, 'Request was successful', 200, { data: 'Your data here' });
+    ApiResponder.successResponse(res, 'Request was successful', ResponseStatus.HTTP_OK, { data: 'Your data here' });
 });
 
 app.get('/failure', (req, res) => {
-    apiResponder.failureResponse(res, 'Request failed', 400, { error: 'Bad Request' });
+    ApiResponder.failureResponse(res, 'Request failed', ResponseStatus.HTTP_NOT_FOUND, { error: 'Bad Request' });
 });
 
 app.listen(3000, () => {

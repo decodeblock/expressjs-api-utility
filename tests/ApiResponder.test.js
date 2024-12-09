@@ -1,6 +1,7 @@
 const express = require('express');
 const request = require('supertest');
 const ApiResponder = require('../src/ApiResponder');
+const ResponseStatus = require('../src/ResponseStatus');
 
 describe('ApiResponder', () => {
     let app;

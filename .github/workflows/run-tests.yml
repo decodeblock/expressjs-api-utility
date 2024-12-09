@@ -16,8 +16,8 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-latest, windows-latest]
-        node: [16, 18, 20]  # Specify Node.js versions to test
-        npm: [6, 7, 8]      # Specify npm versions to test
+        node: [21, 22, 23]  # Specify Node.js versions to test
+        npm: [9,10]      # Specify npm versions to test
     name: Test Node.js${{ matrix.node }} and npm${{ matrix.npm }} on ${{ matrix.os }}
 
     steps:
@@ -46,4 +46,4 @@ jobs:
         run: npm list --depth=0
 
       - name: Execute tests
-        run: npm test -- --ci
+        run: npm test -- --ci --verbose
