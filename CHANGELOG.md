@@ -2,6 +2,19 @@
 
 All notable changes to `expressjs-api-utility` will be documented in this file.
 
+## v1.1.0 - 2024-12-09
+
+### Added
+
+- Introduced `ResponseStatus` to simplify usage of HTTP status codes in applications.
+  - Example:
+    ```javascript
+    const { ResponseStatus } = require('@decodeblock/expressjs-api-utility');
+    console.log(ResponseStatus.HTTP_OK); // 200
+    
+    ```
+  
+
 ## v1.0.2 - 2024-12-09
 
 ### Fixed
@@ -23,6 +36,7 @@ To apply this fix, update your package to the latest version using the following
 
 ```bash
 npm install @decodeblock/expressjs-api-utility@latest
+
 
 ```
 ## v1.0.1 - 2024-12-09
@@ -46,6 +60,7 @@ To apply this fix, update your package to the latest version using the following
 
 ```bash
 npm install @decodeblock/expressjs-api-utility@latest
+
 
 
 ```
