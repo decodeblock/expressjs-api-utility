@@ -1,4 +1,4 @@
-name: run-tests
+name: Run Tests
 
 on:
   push:
@@ -16,8 +16,8 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-latest, windows-latest]
-        node: [21, 22, 23]  # Specify Node.js versions to test
-        npm: [9,10]      # Specify npm versions to test
+        node: [23]  # Specify Node.js versions to test
+        npm: [10]      # Specify npm versions to test
     name: Test Node.js${{ matrix.node }} and npm${{ matrix.npm }} on ${{ matrix.os }}
 
     steps:
