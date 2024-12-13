@@ -2,6 +2,10 @@
 
 All notable changes to `expressjs-api-utility` will be documented in this file.
 
+## v1.1.1 - 2024-12-13
+
+- Updated Readme
+
 ## v1.1.0 - 2024-12-09
 
 ### Added
@@ -11,6 +15,7 @@ All notable changes to `expressjs-api-utility` will be documented in this file.
     ```javascript
     const { ResponseStatus } = require('@decodeblock/expressjs-api-utility');
     console.log(ResponseStatus.HTTP_OK); // 200
+    
     
     ```
   
@@ -38,6 +43,7 @@ To apply this fix, update your package to the latest version using the following
 npm install @decodeblock/expressjs-api-utility@latest
 
 
+
 ```
 ## v1.0.1 - 2024-12-09
 
@@ -60,6 +66,7 @@ To apply this fix, update your package to the latest version using the following
 
 ```bash
 npm install @decodeblock/expressjs-api-utility@latest
+
 
 
 
