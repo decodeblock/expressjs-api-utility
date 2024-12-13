@@ -4,7 +4,7 @@
 [![Latest Version](https://img.shields.io/npm/v/@decodeblock/expressjs-api-utility.svg?style=flat-square)](https://www.npmjs.com/package/@decodeblock/expressjs-api-utility)
 [![Tests Status](https://img.shields.io/github/actions/workflow/status/decodeblock/expressjs-api-utility/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/decodeblock/expressjs-api-utility/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![Total Downloads](https://img.shields.io/npm/dt/@decodeblock/expressjs-api-utility.svg?style=flat-square)](https://www.npmjs.com/package/@decodeblock/expressjs-api-utility)
-[![Contributors](https://img.shields.io/github/contributors/decodeblock/expressjs-api-utility.svg?style=flat-square)](https://github.com/gabbyti/expressjs-api-utility/graphs/contributors)
+[![Contributors](https://img.shields.io/github/contributors/decodeblock/expressjs-api-utility.svg?style=flat-square)](https://github.com/decodeblock/expressjs-api-utility/graphs/contributors)
 
 A utility library for ExpressJS applications that provides helper functions to streamline API response handling. Simplify JSON response formatting and enhance your API development process.
 
